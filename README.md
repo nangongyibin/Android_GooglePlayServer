@@ -1,8 +1,10 @@
-# GooglePlayN
-谷歌市场
+# 谷歌市场
+
+
 
 
 # 项目简介 #
+
 本项目是应用市场的一个示例项目，展示了一个应用市场基本的功能：应用展示，应用分类，应用详情，应用下载等。
 
 
@@ -36,6 +38,7 @@
 > tomcat必须使用7以上版本，Eclipse工作区间编码格式改成utf-8
 
 # 项目初始化 #
+
 * BaseActivity
 * BaseFragment
 * [ButterKnife](https://github.com/JakeWharton/butterknife)集成
@@ -73,6 +76,7 @@
 	</android.support.v4.widget.DrawerLayout>
 
 ## DrawLayout ##
+
 在DrawerLayout出现之前，我们需要做侧滑菜单时，不得不自己实现一个或者使用Github上的开源的项目SlidingMenu，也许是Google也看到了SlidingMenu的强大之处，于是在Android的后期版本中添加了DrawerLayout来实现SlidingMenu同样功能的组件，而且为了兼容早期版本，将其添加在android,support.v4包下。
 
 
@@ -111,6 +115,7 @@
 
 
 ### NavigationView的使用 ###
+
 DrawerLayout里面的菜单布局我们可以自己定义，但谷歌也提供的相应的控件NavigationView，方便开发者完成菜单布局。
 
 	//需添加依赖	
@@ -174,6 +179,7 @@ DrawerLayout里面的菜单布局我们可以自己定义，但谷歌也提供�
 
 
 ## ToolBar ##
+
 官方在某些程度上认为 ActionBar 限制了 android app 的开发与设计的弹性,
 Toolbar 是在 Android 5.0 开始推出的一个 Material Design 风格的导航控件 ，Google 非常推荐大家使用 Toolbar 
 来作为Android客户端的导航栏，以此来取代之前的 Actionbar 。与 Actionbar 相比，Toolbar 明显要灵活的多。它不像 
@@ -218,6 +224,7 @@ Actionbar一样，一定要固定在Activity的顶部，而是可以放到界面
 
 
 #### 2. 创建v21样式 ####
+
 在v21版本及以上可以配置状态栏颜色，所以
 
         <!-- Base application theme. -->
@@ -376,9 +383,12 @@ Actionbar一样，一定要固定在Activity的顶部，而是可以放到界面
 
 
 ## BaseFragment抽取 ##
+
 BaseFragment抽取了所有Fragment的共性，特性交给子类去实现。
+
 ### 界面的公共点 ###
 #### 布局 ####
+
 * 加载进度条
 * 加载出错布局
 
@@ -440,6 +450,7 @@ BaseFragment抽取了所有Fragment的共性，特性交给子类去实现。
     protected abstract View onCreateContentView();
 
 # Retrofit集成 #
+
 * [Github](https://github.com/square/retrofit)
 * [Wiki](http://square.github.io/retrofit/)
 
@@ -1105,7 +1116,7 @@ CategoryInfoItemView为CategoryItemView中一个子条目的视图。
         }
     }
 
-### onCreateItemView###
+### onCreateItemView ###
 
     
     @Override
@@ -1874,7 +1885,7 @@ DownloadManger完成对应用下载的管理，使用单例模式。
 
 
 
-## 下载数据结构 DownloadInfo##
+## 下载数据结构 DownloadInfo ##
 
 由于下载一个app的过程中会产成很多数据，包括下载app的名字，下载的进度，下载的状态等，这里构建一个描述下载一个app的数据结构。另外在app列表界面和app详情界面需要共享一个应用的下载信息的。
 	
@@ -2382,6 +2393,7 @@ Android中耗时的操作，都会开子线程，线程的创建和销毁是要�
 * Executors:可以一行代码创建一些常见的线程池。
 
 ## ThreadPoolExecutor介绍 ##
+
 	//构造方法
 	public ThreadPoolExecutor(int corePoolSize，//核心池的大小
 	                              int maximumPoolSize，//线程池最大线程数
@@ -2390,6 +2402,7 @@ Android中耗时的操作，都会开子线程，线程的创建和销毁是要�
 	                              BlockingQueue<Runnable> workQueue，//任务队列
 	                              ThreadFactory threadFactory，//线程工厂
 	                              RejectedExecutionHandler handler) //异常的捕捉器
+
 ### 构造相关参数解释 ###
 
 * corePoolSize：`核心池的大小`，这个参数跟后面讲述的线程池的实现原理有非常大的关系。在创建了线程池后，默认情况下，线程池中并没有任何线程，而是等待有任务到来才创建线程去执行任务，除非调用了prestartAllCoreThreads()或者prestartCoreThread()方法，从这2个方法的名字就可以看出，是预创建线程的意思，即在没有任务到来之前就创建corePoolSize个线程或者一个线程。默认情况下，在创建了线程池后，线程池中的线程数为0，当有任务来之后，就会创建一个线程去执行任务，当线程池中的线程数目达到corePoolSize后，就会把到达的任务放到缓存队列当中；
@@ -2438,7 +2451,7 @@ Android中耗时的操作，都会开子线程，线程的创建和销毁是要�
 3. 如果当前线程池中的线程数目达到maximumPoolSize，则会采取任务拒绝策略进行处理；
 4. 如果线程池中的线程数量大于 corePoolSize时，如果某线程空闲时间超过keepAliveTime，线程将被终止，直至线程池中的线程数目不大于corePoolSize；如果允许为核心池中的线程设置存活时间，那么核心池中的线程空闲时间超过keepAliveTime，线程也会被终止。
 
-### 任务提交给线程池之后的处理策略（比喻）###
+### 任务提交给线程池之后的处理策略（比喻） ###
 
 假如有一个工厂，工厂里面有10(`corePoolSize`)个工人，每个工人同时只能做一件任务。因此只要当10个工人中有工人是空闲的，`来了任务就分配`给空闲的工人做；
 当10个工人都有任务在做时，如果还来了任务，就把任务进行排队等待(`任务队列`)；如果说新任务数目增长的速度远远大于工人做任务的速度，那么此时工厂主管可能会想补救措施，比如重新招4个临时工人(`创建新线程`)进来；然后就将任务也分配给这4个临时工人做；
@@ -2499,7 +2512,7 @@ Android中耗时的操作，都会开子线程，线程的创建和销毁是要�
 
 创建一个可缓存的线程池。如果线程池的大小超过了处理任务所需要的线程，那么就会回收部分空闲（60秒不执行任务）的线程，当任务数增加时，此线程池又可以智能的添加新线程来处理任务。此线程池不会对线程池大小做限制，线程池大小完全依赖于操作系统（或者说JVM）能够创建的最大线程大小。
 
-### newScheduledThreadPool###
+### newScheduledThreadPool ###
 
 创建一个大小无限的线程池。此线程池支持定时以及周期性执行任务的需求。
 
@@ -2739,4 +2752,5 @@ AlertDialog.Builder, Retrofit.Builder，OkHttp.Builder
 效果图:
 
 
-![](https://github.com/nangongyibin7219/Android_GooglePlay/blob/master/1.gif?raw=true)
+![](https://github.com/nangongyibin/Android_GooglePlayServer/blob/master/1.gif?raw=true)
+
