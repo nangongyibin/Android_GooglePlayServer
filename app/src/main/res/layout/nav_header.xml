@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_160"
+    android:background="@drawable/side_nav_bar"
+    android:orientation="vertical"
+    android:padding="@dimen/dp_8">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/avatar"
+        android:tint="@android:color/white" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="南宫燚滨"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/sp_20" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:gravity="center_horizontal"
+        android:text="nangongyibin@gmail.com"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/sp_14" />
+</LinearLayout>

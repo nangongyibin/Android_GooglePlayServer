@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@mipmap/detail_bottom_bg"
+    android:orientation="horizontal"
+    android:padding="@dimen/dp_8"
+    tools:showIn="@layout/fragment_app_detail">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/detail_btn_selector"
+        android:text="收藏"
+        android:textColor="@android:color/white" />
+
+    <com.ngyb.googleplayserver.view.DownloadButton
+        android:id="@+id/download_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_10"
+        android:layout_weight="1"
+        android:background="@drawable/progress_selector"
+        android:gravity="center"
+        android:padding="@dimen/dp_20"
+        android:text="下载"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/sp_20" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/detail_btn_selector"
+        android:text="分享"
+        android:textColor="@android:color/white" />
+</LinearLayout>
