@@ -11,9 +11,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
+import com.ngyb.flowsummary.FlowLayout;
 import com.ngyb.googleplayserver.R;
 import com.ngyb.googleplayserver.net.NgybRetrofit;
-import com.ngyb.googleplayserver.view.FlowLayout;
 import com.ngyb.mvpbase.BaseLoadDataFragment;
 
 import java.util.List;

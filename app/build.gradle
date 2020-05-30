@@ -41,4 +41,5 @@ dependencies {
     implementation 'com.github.uncleleonfan:funbanner:1.2.0'
     implementation 'com.github.nangongyibin:Android_Utils:1.1.2'
     implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.github.nangongyibin:Android_FlowSummary:1.0.1'
 }
